@@ -1,19 +1,17 @@
-import Link from "next/link";
+import {SiteFooter} from "@/components/site-footer";
+import {MarketingNav} from "@/components/nav-mark";
 
 interface MarketingLayoutProps {
   children: React.ReactNode;
 }
+
 export default async function MarketingLayout({children}: MarketingLayoutProps) {
   return (
-    <div>
-      <header className="flex justify-center text-center">
-        <div className="h-20 w-full py-6">
-          <nav>
-            <Link href="/login">Login</Link>
-          </nav>
-        </div>
-      </header>
-      <main>{children}</main>
+    <div className="flex min-h-screen flex-col">
+      <MarketingNav />
+
+      <main className="flex-1">{children}</main>
+      <SiteFooter />
     </div>
   );
 }
