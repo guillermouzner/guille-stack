@@ -23,13 +23,13 @@ export default async function BillingPage() {
 
   const subscriptionPlan = await getUserSubscriptionPlan(user.id);
 
-  // If user has a pro plan, check cancel status on Stripe.
+  // If user has a pro plan, check cancel status on Mercadopago.
   let isCanceled = false;
 
-  // if (subscriptionPlan.isPro && subscriptionPlan.stripeSubscriptionId) {
-  //   const stripePlan = await stripe.subscriptions.retrieve(subscriptionPlan.stripeSubscriptionId);
+  // if (subscriptionPlan.isPro && subscriptionPlan.mercadopagoSubscriptionId) {
+  //   const mercadopagoPlan = await mercadopago.subscriptions.retrieve(subscriptionPlan.mercadopagoSubscriptionId);
 
-  //   isCanceled = stripePlan.cancel_at_period_end;
+  //   isCanceled = mercadopagoPlan.cancel_at_period_end;
   // }
 
   return (

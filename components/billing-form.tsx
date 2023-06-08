@@ -40,7 +40,7 @@ export function BillingForm({subscriptionPlan, className, ...props}: BillingForm
       });
     }
 
-    // Redirect to the Stripe session.
+    // Redirect to the Mercadopago session.
     // This could be a checkout page for initial upgrade.
     // Or portal to manage existing subscription.
 
@@ -71,7 +71,7 @@ export function BillingForm({subscriptionPlan, className, ...props}: BillingForm
               {subscriptionPlan.isCanceled
                 ? "Your plan will be canceled on "
                 : "Your plan renews on "}
-              {formatDate(subscriptionPlan.stripeCurrentPeriodEnd)}.
+              {formatDate(subscriptionPlan.mercadopagoCurrentPeriodEnd)}.
             </p>
           ) : null}
         </CardFooter>

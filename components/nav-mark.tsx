@@ -7,8 +7,6 @@ import {UserAvatar} from "./user-avatar";
 
 import useScroll from "@/hooks/use-scroll";
 
-// https://lh3.googleusercontent.com/a/AAcHTtcX5_Oy9-jNzGcN8ImfofyzTwrxdopx2jUkNOfEGIY=s96-c
-
 export function MarketingNav() {
   const scrolled = useScroll(80);
 
@@ -34,7 +32,7 @@ export function MarketingNav() {
                   null,
               }}
             />{" "}
-            <p className="text-lg font-semibold">Guillermo tried coding</p>
+            <p className="text-lg font-semibold">Guillermo trying coding</p>
           </Link>
         </div>
       </div>

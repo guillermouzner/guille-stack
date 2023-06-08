@@ -59,10 +59,10 @@ model User {
   Post     Post[]
   // ApiKey ApiKey[]
 
-  stripeCustomerId       String?   @unique @map(name: "stripe_customer_id")
-  stripeSubscriptionId   String?   @unique @map(name: "stripe_subscription_id")
-  stripePriceId          String?   @map(name: "stripe_price_id")
-  stripeCurrentPeriodEnd DateTime? @map(name: "stripe_current_period_end")
+  mercadopagoCustomerId       String?   @unique @map(name: "mercadopago_customer_id")
+  mercadopagoSubscriptionId   String?   @unique @map(name: "mercadopago_subscription_id")
+  mercadopagoPriceId          String?   @map(name: "mercadopago_price_id")
+  mercadopagoCurrentPeriodEnd DateTime? @map(name: "mercadopago_current_period_end")
 
   apiKeyId String?
 

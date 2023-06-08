@@ -56,11 +56,11 @@ export type DashboardConfig = {
 export type SubscriptionPlan = {
   name: string;
   description: string;
-  stripePriceId: string;
+  mercadopagoPriceId: string;
 };
 
 export type UserSubscriptionPlan = SubscriptionPlan &
-  Pick<User, "stripeCustomerId" | "stripeSubscriptionId"> & {
-    stripeCurrentPeriodEnd: number;
+  Pick<User, "mercadopagoCustomerId" | "mercadopagoSubscriptionId"> & {
+    mercadopagoCurrentPeriodEnd: number;
     isPro: boolean;
   };

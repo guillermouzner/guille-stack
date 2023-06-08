@@ -12,10 +12,10 @@ export async function getUserSubscriptionPlan(userId: string): Promise<UserSubsc
     },
     // especificar qué campos se deben incluir en el resultado de la consulta:
     select: {
-      stripeSubscriptionId: true,
-      stripeCurrentPeriodEnd: true,
-      stripeCustomerId: true,
-      stripePriceId: true,
+      mercadopagoSubscriptionId: true,
+      mercadopagoCurrentPeriodEnd: true,
+      mercadopagoCustomerId: true,
+      mercadopagoPriceId: true,
     },
   });
 
@@ -25,14 +25,15 @@ export async function getUserSubscriptionPlan(userId: string): Promise<UserSubsc
 
   // Check if user is on a pro plan.
   const isPro =
-    user.stripePriceId && user.stripeCurrentPeriodEnd?.getTime() + 86_400_000 > Date.now();
+    user.mercadopagoPriceId &&
+    user.mercadopagoCurrentPeriodEnd?.getTime() + 86_400_000 > Date.now();
 
   const plan = isPro ? proPlan : freePlan;
 
   return {
     ...plan,
     ...user,
-    stripeCurrentPeriodEnd: user.stripeCurrentPeriodEnd?.getTime(),
+    mercadopagoCurrentPeriodEnd: user.mercadopagoCurrentPeriodEnd?.getTime(),
     isPro,
   };
 }
