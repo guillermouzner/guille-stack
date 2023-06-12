@@ -21,7 +21,7 @@ A list of things not working right now:
 
 ## Running Locally
 
-1. Install dependencies using pnpm:
+1. Install dependencies using npm:
 
 ```sh
 npm install
